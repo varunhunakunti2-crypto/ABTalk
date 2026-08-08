@@ -78,7 +78,7 @@ export default function Dashboard() {
     } else if (hours < 17) {
       timeGreeting = "Good afternoon";
     }
-    return `${timeGreeting}, ${student?.name || 'Appi'} 👋`;
+    return `${timeGreeting}, ${student?.name || 'Nano Banana'} 👋`;
   };
 
   if (loading) {
@@ -150,10 +150,10 @@ export default function Dashboard() {
             <div className="flex flex-col items-center text-center gap-3">
               {/* Avatar */}
               <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-violet-soft/60 to-violet/10 text-violet-deep flex items-center justify-center font-black text-3xl border border-violet-soft shadow-md">
-                {student?.name?.charAt(0) || 'A'}
+                {student?.name?.charAt(0) || 'N'}
               </div>
               <div>
-                <h2 className="text-xl font-bold text-primary">{student?.name || 'Appi'}</h2>
+                <h2 className="text-xl font-bold text-primary">{student?.name || 'Nano Banana'}</h2>
                 <p className="text-xs text-mute font-semibold mt-1">{student?.track || 'Full Stack'} Developer</p>
               </div>
             </div>

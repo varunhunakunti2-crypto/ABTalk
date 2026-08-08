@@ -10,7 +10,7 @@ app.use(express.json());
 // In-memory Mock Data
 let student = {
   id: "student_1",
-  name: "Appi",
+  name: "Nano Banana",
   track: "Full Stack",
   currentDay: 12,
   streak: 11, // Streak protected at 11 days
