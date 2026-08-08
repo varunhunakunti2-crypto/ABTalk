@@ -1,46 +1,68 @@
-# Astro Starter Kit: Basics
+# ABTalks 60-Day Challenge — Student Center
 
-```sh
-npm create astro@latest -- --template basics
+A highly polished, responsive Web App built with **Astro, React, Tailwind CSS v4, and Express** to track and submit projects for the 60-Day Challenge.
+
+---
+
+## 🗺️ Route Map
+
+```
+[Browser Client]
+   │
+   ├── / (Landing Page) ──► LandingPage.jsx (Tagline, Stats, Why ABTalks, Tracks)
+   │
+   ├── /dashboard ────────► Dashboard.jsx (Streak Card, Challenge Timeline, Achievements, Profile Tab)
+   │
+   └── /day/:dayNumber ──► ChallengeDay.jsx (Requirements checklists, URL validator form, Success screen)
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-## 🚀 Project Structure
+## 🏗️ Project Architecture
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```
+ABtalks/
+├── frontend/             # Astro & React Frontend
+│   ├── src/
+│   │   ├── components/   # Page & Reusable UI Components
+│   │   ├── layouts/      # Layout templates
+│   │   ├── pages/        # Astro File-based Routes
+│   │   └── styles/       # Global CSS (Tailwind v4 theme setup)
+│   ├── public/           # Static assets
+│   ├── astro.config.mjs  # Astro configuration
+│   └── package.json      # Frontend package configuration
+│
+├── backend/              # Express Mock Server
+│   ├── server.js         # API Server (Student stats, submissions tracker, streak logic)
+│   └── package.json      # Backend package configuration
+│
+└── package.json          # Root Orchestrator (concurrently starts both servers)
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+---
 
-## 🧞 Commands
+## ⚡ API Endpoints
 
-All commands are run from the root of the project, from a terminal:
+### 1. Student API
+- `GET /api/student`: Returns student profile details (Streak, Achievements, Streak Shield status).
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+### 2. Challenge API
+- `GET /api/challenges`: Returns the 60 days challenge timeline list.
+- `GET /api/challenges/:day`: Returns metadata for a specific day's challenge.
 
-## 👀 Want to learn more?
+### 3. Submission API
+- `POST /api/submissions`: Validates URLs (GitHub repo, GitHub commit, LinkedIn, Live Url) and marks challenge day complete, updating streak metrics.
+- `GET /api/submissions/:day`: Returns submission completeness booleans.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+---
+
+## 🚀 Running Locally
+
+1. **Install Dependencies** (from the root directory):
+   ```bash
+   npm run install:all
+   ```
+2. **Start Dev Servers** (fires both frontend on `:4321` and backend on `:3001` concurrently):
+   ```bash
+   npm run dev
+   ```

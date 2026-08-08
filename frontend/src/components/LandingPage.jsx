@@ -54,13 +54,14 @@ export default function LandingPage() {
       <header className="sticky top-0 z-50 bg-canvas/80 backdrop-blur-md border-b border-hairline h-16 transition-all">
         <div className="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
-              <span className="text-canvas font-bold text-lg">AB</span>
-            </div>
-            <div>
-              <span className="font-semibold text-primary block leading-none">ABTalks</span>
-              <span className="text-[10px] text-mute">60-Day Challenge</span>
-            </div>
+            <svg className="h-10 w-auto text-primary" viewBox="0 0 280 88" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0" y="0" width="88" height="88" rx="20" fill="currentColor"/>
+              <path d="M20 32 C30 26 38 26 44 32 L44 60 C38 54 30 54 20 60 Z" fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M68 32 C58 26 50 26 44 32 L44 60 C50 56 58 54 68 60 Z" fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"/>
+              <path d="M56 20 L64 20 L64 40 L60 36 L56 40 Z" fill="#ffffff"/>
+              <text x="106" y="42" font-family="sans-serif" font-size="28" font-weight="600" fill="currentColor">ABTalks</text>
+              <text x="107" y="62" font-family="sans-serif" font-size="13" fill="#64748B">60-Day Challenge</text>
+            </svg>
           </div>
 
           {/* Desktop Navigation */}
@@ -417,10 +418,14 @@ export default function LandingPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-6 h-6 bg-primary rounded flex items-center justify-center">
-                  <span className="text-canvas font-bold text-sm">AB</span>
-                </div>
-                <span className="font-bold text-primary text-sm">ABTalks</span>
+                <svg className="h-8 w-auto text-primary" viewBox="0 0 280 88" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0" y="0" width="88" height="88" rx="20" fill="currentColor"/>
+                  <path d="M20 32 C30 26 38 26 44 32 L44 60 C38 54 30 54 20 60 Z" fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"/>
+                  <path d="M68 32 C58 26 50 26 44 32 L44 60 C50 56 58 54 68 60 Z" fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"/>
+                  <path d="M56 20 L64 20 L64 40 L60 36 L56 40 Z" fill="#ffffff"/>
+                  <text x="106" y="42" font-family="sans-serif" font-size="28" font-weight="600" fill="currentColor">ABTalks</text>
+                  <text x="107" y="62" font-family="sans-serif" font-size="13" fill="#64748B">60-Day Challenge</text>
+                </svg>
               </div>
               <p className="text-xs text-mute leading-relaxed max-w-xs">
                 A highly structured 60-day programming challenge for ambitious web developers and software engineers.

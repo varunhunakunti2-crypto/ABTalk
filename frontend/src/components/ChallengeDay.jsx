@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ChevronLeft, Clock, Award, AlertCircle, RefreshCw, CheckCircle, Flame } from 'lucide-react';
+import ErrorState from './ui/ErrorState';
 
 export default function ChallengeDay({ dayNumber }) {
   const [challenge, setChallenge] = useState(null);
@@ -115,17 +116,7 @@ export default function ChallengeDay({ dayNumber }) {
   if (error || !challenge) {
     return (
       <div className="min-h-screen bg-canvas-soft flex items-center justify-center p-6">
-        <div className="bg-canvas border border-hairline p-8 rounded-xl shadow-lg max-w-sm w-full text-center">
-          <AlertCircle className="w-12 h-12 text-error mx-auto mb-4" />
-          <h3 className="text-lg font-bold text-primary mb-2">Something went wrong</h3>
-          <p className="text-sm text-body mb-6">We couldn't load your challenge. Please check your connection or try again.</p>
-          <button 
-            onClick={fetchChallengeData} 
-            className="w-full inline-flex items-center justify-center gap-2 bg-primary text-canvas px-4 py-2.5 rounded font-semibold text-sm hover:bg-primary/90 transition-colors"
-          >
-            <RefreshCw className="w-4 h-4" /> Try Again
-          </button>
-        </div>
+        <ErrorState onRetry={fetchChallengeData} />
       </div>
     );
   }

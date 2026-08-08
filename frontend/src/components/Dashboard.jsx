@@ -5,6 +5,7 @@ import {
   Home, BookOpen, User, Sparkles, RefreshCw, AlertCircle,
   Github, Linkedin, Target
 } from 'lucide-react';
+import ErrorState from './ui/ErrorState';
 
 export default function Dashboard() {
   const [student, setStudent] = useState(null);
@@ -96,17 +97,7 @@ export default function Dashboard() {
   if (error) {
     return (
       <div className="min-h-screen bg-canvas-soft flex items-center justify-center p-6">
-        <div className="bg-canvas border border-hairline p-8 rounded-xl shadow-lg max-w-sm w-full text-center">
-          <AlertCircle className="w-12 h-12 text-error mx-auto mb-4" />
-          <h3 className="text-lg font-bold text-primary mb-2">Something went wrong</h3>
-          <p className="text-sm text-body mb-6">We couldn't load your challenge and profile information. Please try again.</p>
-          <button 
-            onClick={fetchStudentData} 
-            className="w-full inline-flex items-center justify-center gap-2 bg-primary text-canvas px-4 py-2.5 rounded font-semibold text-sm hover:bg-primary/90 transition-colors"
-          >
-            <RefreshCw className="w-4 h-4" /> Try Again
-          </button>
-        </div>
+        <ErrorState onRetry={fetchStudentData} />
       </div>
     );
   }
@@ -122,8 +113,16 @@ export default function Dashboard() {
       <header className="bg-canvas border-b border-hairline h-16 hidden md:flex items-center">
         <div className="max-w-5xl mx-auto w-full px-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <a href="/" className="w-8 h-8 bg-primary rounded flex items-center justify-center text-canvas font-bold">AB</a>
-            <span className="font-bold text-primary">Student Center</span>
+            <a href="/" className="flex items-center">
+              <svg className="h-10 w-auto text-primary" viewBox="0 0 280 88" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="88" height="88" rx="20" fill="currentColor"/>
+                <path d="M20 32 C30 26 38 26 44 32 L44 60 C38 54 30 54 20 60 Z" fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"/>
+                <path d="M68 32 C58 26 50 26 44 32 L44 60 C50 56 58 54 68 60 Z" fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"/>
+                <path d="M56 20 L64 20 L64 40 L60 36 L56 40 Z" fill="#ffffff"/>
+                <text x="106" y="42" font-family="sans-serif" font-size="28" font-weight="600" fill="currentColor">ABTalks</text>
+                <text x="107" y="62" font-family="sans-serif" font-size="13" fill="#64748B">60-Day Challenge</text>
+              </svg>
+            </a>
           </div>
           <nav className="flex items-center gap-6">
             <a href="/" className="text-sm text-body hover:text-primary transition-colors">Home</a>
