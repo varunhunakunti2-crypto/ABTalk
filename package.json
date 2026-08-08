@@ -1,17 +1,13 @@
 {
   "name": "abtalks",
-  "type": "module",
   "version": "0.0.1",
-  "engines": {
-    "node": ">=22.12.0"
-  },
+  "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "install:all": "cd frontend && npm install && cd ../backend && npm install",
+    "build": "npm run build --prefix frontend"
   },
-  "dependencies": {
-    "astro": "^7.2.0"
+  "devDependencies": {
+    "concurrently": "^10.0.4"
   }
 }

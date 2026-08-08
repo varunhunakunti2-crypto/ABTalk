@@ -1,0 +1,16 @@
+---
+import ChallengeDay from '../../components/ChallengeDay.jsx';
+import Layout from '../../layouts/Layout.astro';
+
+export function getStaticPaths() {
+  return Array.from({ length: 60 }, (_, i) => ({
+    params: { dayNumber: String(i + 1) }
+  }));
+}
+
+const { dayNumber } = Astro.params;
+---
+
+<Layout>
+	<ChallengeDay client:load dayNumber={parseInt(dayNumber)} />
+</Layout>
