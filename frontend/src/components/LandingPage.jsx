@@ -435,26 +435,26 @@ export default function LandingPage() {
             <div>
               <h4 className="text-xs font-bold text-primary uppercase tracking-wider mb-4">Challenge</h4>
               <ul className="flex flex-col gap-2.5">
-                <li><a href="#tracks" className="text-xs text-body hover:text-primary transition-colors">Tracks</a></li>
-                <li><a href="#how" className="text-xs text-body hover:text-primary transition-colors">How it works</a></li>
-                <li><a href="#preview" className="text-xs text-body hover:text-primary transition-colors">Progress Preview</a></li>
+                <li><a href="#tracks" className="text-xs text-body hover:text-accent hover:translate-x-1 transition-all duration-200 inline-block">Tracks</a></li>
+                <li><a href="#how" className="text-xs text-body hover:text-accent hover:translate-x-1 transition-all duration-200 inline-block">How it works</a></li>
+                <li><a href="#preview" className="text-xs text-body hover:text-accent hover:translate-x-1 transition-all duration-200 inline-block">Progress Preview</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="text-xs font-bold text-primary uppercase tracking-wider mb-4">Community</h4>
               <ul className="flex flex-col gap-2.5">
-                <li><a href="https://github.com" className="text-xs text-body hover:text-primary transition-colors flex items-center gap-1.5"><Github className="w-3.5 h-3.5" /> GitHub</a></li>
-                <li><a href="https://linkedin.com" className="text-xs text-body hover:text-primary transition-colors flex items-center gap-1.5"><Linkedin className="w-3.5 h-3.5" /> LinkedIn</a></li>
-                <li><a href="/dashboard" className="text-xs text-body hover:text-primary transition-colors">Student Dashboard</a></li>
+                <li><a href="https://github.com" className="text-xs text-body hover:text-accent hover:translate-x-1 transition-all duration-200 flex items-center gap-1.5"><Github className="w-3.5 h-3.5" /> GitHub</a></li>
+                <li><a href="https://linkedin.com" className="text-xs text-body hover:text-accent hover:translate-x-1 transition-all duration-200 flex items-center gap-1.5"><Linkedin className="w-3.5 h-3.5" /> LinkedIn</a></li>
+                <li><a href="/dashboard" className="text-xs text-body hover:text-accent hover:translate-x-1 transition-all duration-200 inline-block">Student Dashboard</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="text-xs font-bold text-primary uppercase tracking-wider mb-4">Contact</h4>
               <ul className="flex flex-col gap-2.5 text-xs text-body">
-                <li>Email: support@abtalks.com</li>
-                <li>About: abtalks.com/about</li>
+                <li>Email: <a href="mailto:support@abtalks.com" className="hover:text-accent hover:translate-x-0.5 transition-all duration-200 inline-block">support@abtalks.com</a></li>
+                <li>About: <a href="/about" className="hover:text-accent hover:translate-x-0.5 transition-all duration-200 inline-block">abtalks.com/about</a></li>
                 <li>Copyright © 2026 ABTalks.</li>
               </ul>
             </div>

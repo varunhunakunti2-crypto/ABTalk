@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="min-h-screen bg-canvas flex flex-col items-center justify-center p-6 text-center select-none animate-in fade-in duration-200">
+    <div class="max-w-md w-full flex flex-col gap-6">
+      
+      {/* Brand Logo */}
+      <a href="/" class="inline-block hover:scale-[1.01] transition-transform">
+        <svg class="h-16 w-auto text-primary mx-auto" viewBox="0 0 280 88" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="88" height="88" rx="20" fill="currentColor"/>
+          <path d="M20 32 C30 26 38 26 44 32 L44 60 C38 54 30 54 20 60 Z" fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M68 32 C58 26 50 26 44 32 L44 60 C50 56 58 54 68 60 Z" fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M56 20 L64 20 L64 40 L60 36 L56 40 Z" fill="#ffffff"/>
+          <text x="106" y="42" font-family="sans-serif" font-size="28" font-weight="600" fill="currentColor">ABTalks</text>
+          <text x="107" y="62" font-family="sans-serif" font-size="13" fill="#64748B">60-Day Challenge</text>
+        </svg>
+      </a>
+
+      {/* Styled 404 Header */}
+      <div class="mt-4">
+        <h1 class="text-[120px] large:text-[160px] font-black text-accent tracking-tighter leading-none font-mono">404</h1>
+        <h2 class="text-lg font-black text-primary uppercase tracking-wider mt-3">Page Not Found</h2>
+        <p class="text-xs text-mute font-semibold mt-2 leading-relaxed max-w-xs mx-auto">
+          The page you are looking for has either been moved, renamed, or does not exist.
+        </p>
+      </div>
+
+      {/* Action Buttons */}
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mt-2">
+        <a 
+          href="/" 
+          class="w-full sm:w-auto inline-flex items-center justify-center bg-primary text-canvas px-6 py-3 rounded font-bold text-xs hover:bg-primary/95 hover:scale-[1.01] transition-all shadow"
+        >
+          Go to Home
+        </a>
+        <a 
+          href="/dashboard" 
+          class="w-full sm:w-auto inline-flex items-center justify-center bg-canvas-soft border border-hairline text-primary px-6 py-3 rounded font-bold text-xs hover:bg-canvas-soft-2 hover:scale-[1.01] transition-all shadow-sm"
+        >
+          View Dashboard
+        </a>
+      </div>
+
+    </div>
+  </div>
+</Layout>
