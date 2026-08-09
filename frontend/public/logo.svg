@@ -1,0 +1,19 @@
+<svg width="280" height="88" viewBox="0 0 280 88" xmlns="http://www.w3.org/2000/svg">
+  <!-- Icon background -->
+  <rect x="0" y="0" width="88" height="88" rx="20" fill="#000000"/>
+
+  <!-- Open book: left page -->
+  <path d="M20 32 C30 26 38 26 44 32 L44 60 C38 54 30 54 20 60 Z"
+        fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"/>
+
+  <!-- Open book: right page -->
+  <path d="M68 32 C58 26 50 26 44 32 L44 60 C50 56 58 54 68 60 Z"
+        fill="none" stroke="#ffffff" stroke-width="4" stroke-linejoin="round"/>
+
+  <!-- Bookmark -->
+  <path d="M56 20 L64 20 L64 40 L60 36 L56 40 Z" fill="#ffffff"/>
+
+  <!-- Wordmark -->
+  <text x="106" y="42" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="600" fill="#000000">ABTalks</text>
+  <text x="107" y="62" font-family="Arial, Helvetica, sans-serif" font-size="13" fill="#525252">60-Day Challenge</text>
+</svg>
