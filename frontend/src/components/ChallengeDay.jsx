@@ -28,7 +28,7 @@ export default function ChallengeDay({ dayNumber }) {
     try {
       setLoading(true);
       setError(false);
-      const response = await axios.get(`http://localhost:3001/api/challenges/${dayNumber}`);
+      const response = await axios.get(`/api/challenges/${dayNumber}`);
       setChallenge(response.data);
     } catch (err) {
       console.error("Error loading challenge day:", err);
@@ -80,7 +80,7 @@ export default function ChallengeDay({ dayNumber }) {
     
     try {
       setSubmitting(true);
-      const res = await axios.post('http://localhost:3001/api/submissions', {
+      const res = await axios.post('/api/submissions', {
         day: dayNumber,
         githubRepoUrl: formData.githubRepo,
         githubCommitUrl: formData.githubCommit,

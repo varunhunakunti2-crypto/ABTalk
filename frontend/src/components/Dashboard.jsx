@@ -19,11 +19,11 @@ export default function Dashboard() {
     try {
       setLoading(true);
       setError(false);
-      const studentRes = await axios.get('http://localhost:3001/api/student');
+      const studentRes = await axios.get('/api/student');
       const studentData = studentRes.data;
       setStudent(studentData);
       
-      const challengeRes = await axios.get(`http://localhost:3001/api/challenges/${studentData.currentDay}`);
+      const challengeRes = await axios.get(`/api/challenges/${studentData.currentDay}`);
       setTodaysChallenge(challengeRes.data);
 
       // Generate Timeline Range: from currentDay - 3 to currentDay + 1 (exactly 5 days)
@@ -43,7 +43,7 @@ export default function Dashboard() {
           } else {
             // Check submission
             try {
-              const subRes = await axios.get(`http://localhost:3001/api/submissions/${day}`);
+              const subRes = await axios.get(`/api/submissions/${day}`);
               if (subRes.data.submitted) {
                 return { day, label: "Completed", status: "completed", icon: "✓" };
               } else {
