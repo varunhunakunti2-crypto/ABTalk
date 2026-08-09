@@ -23,7 +23,7 @@ let student = {
   ],
   profileStatus: "active",
   streakShield: false, // Shield has been used for Day 11
-  lastSubmittedDay: 10, // last submitted was day 10, day 11 was missed
+  lastSubmittedDay: 11, // last submitted was day 10, day 11 was missed but protected by shield
   longestStreak: 11
 };
 
@@ -116,14 +116,15 @@ function isGithubUrl(str) {
 app.get('/api/student', (req, res) => {
   // End-of-day silent miss check
   const today = student.currentDay;
-  if (today > student.lastSubmittedDay + 1) {
-    if (!submissions[today]) {
-      const gap = today - student.lastSubmittedDay - 1;
-      if (gap > 0) {
-        student.missedDays += gap;
-        student.streak = 0; // broken
-        student.lastSubmittedDay = today - 1;
-      }
+  const gap = today - student.lastSubmittedDay - 1;
+  if (gap > 0) {
+    // If the user has a shield available and the gap is exactly 1 (e.g. today=12, lastSubmitted=10),
+    // they can still submit today (Day 12) and use the shield to protect the streak.
+    const canBeSavedByShield = student.streakShield && gap === 1;
+    if (!canBeSavedByShield) {
+      student.missedDays += gap;
+      student.streak = 0; // broken
+      student.lastSubmittedDay = today - 1;
     }
   }
 
